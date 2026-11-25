@@ -1,0 +1,83 @@
+{
+  "source": "https://www.veiasa.es/web/guest/itv/estaciones-itv/estaciones-fijas",
+  "checked": "2026-11-25",
+  "note": "Listado inicial de estaciones fijas identificadas en el directorio público de VEIASA. No incluye laboratorios. Revisar el directorio oficial antes de viajar; el listado puede requerir ampliación o actualización.",
+  "provinces": {
+    "Almería": [
+      {"name":"Huércal de Almería (Zamarula)","town":"Huércal de Almería"},
+      {"name":"Huércal de Almería (La Cepa)","town":"Huércal de Almería"},
+      {"name":"Las Tres Villas","town":"Doña María"},
+      {"name":"Balanegra","town":"Balanegra"},
+      {"name":"Vera","town":"Vera"},
+      {"name":"Níjar","town":"Níjar"},
+      {"name":"Albox","town":"Albox"}
+    ],
+    "Cádiz": [
+      {"name":"San Fernando","town":"San Fernando"},
+      {"name":"Algeciras","town":"Algeciras"},
+      {"name":"Chipiona","town":"Chipiona"},
+      {"name":"Jerez de la Frontera","town":"Jerez de la Frontera"},
+      {"name":"Tres Caminos - Puerto Real","town":"Puerto Real"},
+      {"name":"Cádiz","town":"Cádiz"},
+      {"name":"Villamartín","town":"Villamartín"}
+    ],
+    "Córdoba": [
+      {"name":"Córdoba - Ingeniero Torres Quevedo","town":"Córdoba"},
+      {"name":"Córdoba - Las Quemadas","town":"Córdoba"},
+      {"name":"Pozoblanco","town":"Pozoblanco"},
+      {"name":"Peñarroya-Pueblonuevo","town":"Peñarroya-Pueblonuevo"},
+      {"name":"Baena","town":"Baena"},
+      {"name":"Puente Genil","town":"Puente Genil"},
+      {"name":"Palma del Río","town":"Palma del Río"},
+      {"name":"Lucena","town":"Lucena"},
+      {"name":"Priego de Córdoba","town":"Priego de Córdoba"}
+    ],
+    "Granada": [
+      {"name":"Granada","town":"Granada"},
+      {"name":"Peligros","town":"Peligros"},
+      {"name":"Baza","town":"Baza"},
+      {"name":"Motril","town":"Motril"},
+      {"name":"Las Gabias","town":"Las Gabias"},
+      {"name":"Loja","town":"Loja"},
+      {"name":"Órgiva","town":"Órgiva"},
+      {"name":"Huéscar","town":"Huéscar"},
+      {"name":"Guadix","town":"Guadix"}
+    ],
+    "Huelva": [
+      {"name":"Huelva","town":"Huelva"},
+      {"name":"Zalamea la Real","town":"Zalamea la Real"},
+      {"name":"San Juan del Puerto","town":"San Juan del Puerto"},
+      {"name":"Tharsis","town":"Tharsis"},
+      {"name":"Palma del Condado","town":"La Palma del Condado"}
+    ],
+    "Jaén": [
+      {"name":"Jaén","town":"Jaén"},
+      {"name":"Andújar","town":"Andújar"},
+      {"name":"Guarromán","town":"Guarromán"},
+      {"name":"Beas de Segura","town":"Beas de Segura"},
+      {"name":"Quesada","town":"Quesada"},
+      {"name":"Martos","town":"Martos"},
+      {"name":"Úbeda","town":"Úbeda"},
+      {"name":"Alcalá la Real","town":"Alcalá la Real"}
+    ],
+    "Málaga": [
+      {"name":"El Palo","town":"Málaga"},
+      {"name":"Guadalhorce","town":"Málaga"},
+      {"name":"Antequera","town":"Antequera"},
+      {"name":"San Pedro de Alcántara-Marbella","town":"Marbella"},
+      {"name":"Ronda","town":"Ronda"},
+      {"name":"Algarrobo","town":"Algarrobo"}
+    ],
+    "Sevilla": [
+      {"name":"Cazalla de la Sierra","town":"Cazalla de la Sierra"},
+      {"name":"La Rinconada","town":"La Rinconada"},
+      {"name":"Gelves","town":"Gelves"},
+      {"name":"Lebrija","town":"Lebrija"},
+      {"name":"Morón de la Frontera","town":"Morón de la Frontera"},
+      {"name":"Sanlúcar la Mayor","town":"Sanlúcar la Mayor"},
+      {"name":"Écija","town":"Écija"},
+      {"name":"Alcalá de Guadaíra","town":"Alcalá de Guadaíra"},
+      {"name":"Carmona","town":"Carmona"}
+    ]
+  }
+}

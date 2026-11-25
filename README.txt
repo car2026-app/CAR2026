@@ -1,13 +1,19 @@
-CAR2026 - Prototipo iPhone 0.3
+CAR2026 - Prototipo iPhone 0.4
 
-Esta versión incorpora selección múltiple de estaciones y una pantalla de configuración de monitorización.
+Contenido:
+- index.html: aplicación web progresiva.
+- manifest.webmanifest y sw.js: instalación y caché básica.
+- iconos: icon-180.png, icon-192.png, icon-512.png.
+- stations.json: listado inicial de estaciones fijas contrastado con el directorio público de VEIASA.
 
-IMPORTANTE:
-- El catálogo de estaciones sigue siendo demostrativo e incompleto.
-- No existe conexión con la agenda de VEIASA / ITVCITA.
-- No se realizan consultas automáticas ni se envían notificaciones reales.
-- La monitorización se mantiene desactivada hasta validar un método de consulta autorizado y desplegar un servicio backend.
-- No se solicita NIF.
-- El CAPTCHA y la confirmación de la reserva corresponden siempre al usuario en ITVCITA.
+Publicación GitHub Pages:
+Subir el contenido de esta carpeta a la raíz del repositorio car2026-app/CAR2026 (no subir la carpeta contenedora).
 
-Publicación: GitHub Pages desde main / (root).
+Estado funcional:
+La identificación, navegación, filtro de estaciones y selección múltiple funcionan en el navegador. No se envían datos del vehículo a un servidor. No existe conexión con la agenda de ITVCITA, no hay disponibilidad real ni monitorización en segundo plano. El botón de monitorización permanece deshabilitado.
+
+Datos de estaciones:
+El listado es inicial y puede no ser exhaustivo. Fuente oficial: https://www.veiasa.es/web/guest/itv/estaciones-itv/estaciones-fijas. Los laboratorios se excluyen. Confirmar el catálogo vigente en VEIASA.
+
+Reserva:
+La aplicación no realiza reservas ni resuelve CAPTCHA. La reserva se completa manualmente en https://www.itvcita.com/.
