@@ -12,10 +12,10 @@
 <main>
 <section class="card" id="vehicleCard"><h1>Identificación del vehículo</h1><p class="sub">Introduce la matrícula y elige una sola forma de identificación adicional. No solicitamos NIF.</p><label for="plate">Matrícula</label><input id="plate" maxlength="10" autocomplete="off" placeholder="1234 ABC" autocapitalize="characters"><label>Segundo dato identificativo</label><div class="choice"><button type="button" id="dateMode" class="active">1.ª matriculación</button><button type="button" id="vinMode">6 últimos del bastidor</button></div><div id="dateField"><label for="regDate">Fecha de primera matriculación</label><input id="regDate" type="date"></div><div id="vinField" class="hidden"><label for="vin">Últimos 6 dígitos del bastidor</label><input id="vin" inputmode="numeric" maxlength="6" placeholder="123456"></div><div class="notice">Los datos se conservan únicamente en esta sesión de prueba y no se envían a ningún servidor de CAR2026.</div><button class="primary" id="toProvince">Continuar</button></section>
 <section class="card hidden" id="provinceCard"><h2><span class="step">1</span>Selecciona una provincia</h2><p class="sub">Primero eliges la provincia; después aparecerá su listado de estaciones.</p><label for="province">Provincia andaluza</label><select id="province"><option value="">Seleccionar provincia…</option><option>Almería</option><option>Cádiz</option><option>Córdoba</option><option>Granada</option><option>Huelva</option><option>Jaén</option><option>Málaga</option><option>Sevilla</option></select><button class="primary" id="toStations">Ver estaciones</button><button class="secondary" id="backVehicle">Volver a los datos del vehículo</button></section>
-<section class="card hidden" id="stationCard"><h2><span class="step">2</span>Estaciones de <span id="provinceName"></span></h2><p class="sub">Marca todas las estaciones que quieras incluir en la búsqueda. Puedes buscar por nombre o localidad.</p><label for="stationSearch">Buscar estación</label><input id="stationSearch" type="search" placeholder="Ej. Marbella, Ronda, El Palo…"><div class="choice"><button type="button" id="selectAll">Seleccionar todas</button><button type="button" id="clearAll">Quitar selección</button></div><div id="stationList"></div><div class="counter" id="selectedCount">0 estaciones seleccionadas</div><div class="notice warning">Directorio inicial elaborado a partir del listado público de estaciones fijas de VEIASA. No incluye laboratorios. Puede requerir actualización o ampliación; consulta siempre el <a href="https://www.veiasa.es/web/guest/itv/estaciones-itv/estaciones-fijas" target="_blank" rel="noopener">directorio oficial</a>.</div><button class="primary" id="toMonitor" disabled>Continuar con las estaciones seleccionadas</button><button class="secondary" id="backProvince">Cambiar provincia</button></section>
+<section class="card hidden" id="stationCard"><h2><span class="step">2</span>Estaciones de <span id="provinceName"></span></h2><p class="sub">Marca todas las estaciones que quieras incluir en la búsqueda. Puedes buscar por nombre o localidad.</p><label for="stationSearch">Buscar estación</label><input id="stationSearch" type="search" placeholder="Ej. Marbella, Ronda, El Palo…"><div class="choice"><button type="button" id="selectAll">Seleccionar todas</button><button type="button" id="clearAll">Quitar selección</button></div><div id="stationList"></div><div class="counter" id="selectedCount">0 estaciones seleccionadas</div><div class="notice warning">Catálogo de 67 estaciones identificadas en el directorio público de estaciones fijas de VEIASA. Excluye laboratorios y unidades móviles, incluidas las agrícolas. Comprueba siempre el directorio oficial para posibles cambios; consulta <a href="https://www.veiasa.es/web/guest/itv/estaciones-itv/estaciones-fijas" target="_blank" rel="noopener">directorio oficial</a>.</div><button class="primary" id="toMonitor" disabled>Continuar con las estaciones seleccionadas</button><button class="secondary" id="backProvince">Cambiar provincia</button></section>
 <section class="card hidden" id="monitorCard"><h2><span class="step">3</span>Monitorización de citas</h2><p class="sub">Resumen de las estaciones que quieres vigilar.</p><div class="notice">La conexión con la agenda de citas aún no está autorizada ni integrada. Esta pantalla prepara tu selección, pero no ejecuta consultas.</div><div id="monitorStations"></div><div class="metric"><div><strong>60 s</strong><small>Frecuencia objetivo</small></div><div><strong>Inactiva</strong><small>Conexión con ITVCITA</small></div></div><div class="notice warning"><strong>Monitorización todavía no conectada.</strong><br>Esta versión no consulta la agenda de VEIASA ni detecta citas reales. No se realizarán peticiones automáticas hasta validar un método de acceso autorizado y configurar el servicio de monitorización.</div><button class="primary" id="startMonitor" disabled>Iniciar monitorización (pendiente de conexión)</button><button class="secondary" id="openOfficial">Abrir ITVCITA para consultar manualmente</button><button class="secondary" id="backStations">Modificar estaciones</button></section>
 <section class="card hidden" id="officialCard"><h2>Continuar en la web oficial</h2><p class="sub">En ITVCITA introduce los datos que solicite el portal, resuelve personalmente el CAPTCHA y confirma la cita si los datos son correctos.</p><a href="https://www.itvcita.com/Welcome.do" target="_blank" rel="noopener">Abrir ITVCITA</a><div class="notice">CAR2026 no resuelve CAPTCHA ni confirma reservas. La disponibilidad puede cambiar antes de completar la reserva.</div><button class="secondary" id="backMonitor">Volver a CAR2026</button></section>
-</main><footer>CAR2026 · Prototipo iPhone 0.4 · Directorio inicial contrastado con VEIASA · No afiliado a VEIASA</footer>
+</main><footer>CAR2026 · Prototipo iPhone 0.5 · Catálogo de estaciones fijas · No afiliado a VEIASA</footer>
 <script>
 const $=id=>document.getElementById(id);let mode='date',selectedStations=[];
 function show(id){['vehicleCard','provinceCard','stationCard','monitorCard','officialCard'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo({top:0,behavior:'smooth'})}
@@ -23,22 +23,290 @@ $('dateMode').onclick=()=>{mode='date';$('dateMode').classList.add('active');$('
 $('vinMode').onclick=()=>{mode='vin';$('vinMode').classList.add('active');$('dateMode').classList.remove('active');$('vinField').classList.remove('hidden');$('dateField').classList.add('hidden')};
 $('toProvince').onclick=()=>{const plate=$('plate').value.trim().toUpperCase();if(!plate){alert('Introduce la matrícula.');return}if(mode==='date'&&!$('regDate').value){alert('Introduce la fecha de primera matriculación.');return}if(mode==='vin'&&!/^\d{6}$/.test($('vin').value)){alert('Introduce exactamente los seis dígitos finales del bastidor.');return}show('provinceCard')};
 const stations={
-'Almería':[
-['Huércal de Almería (Zamarula)','Huércal de Almería'],['Huércal de Almería (La Cepa)','Huércal de Almería'],['Las Tres Villas','Doña María'],['Balanegra','Balanegra'],['Vera','Vera'],['Níjar','Níjar'],['Albox','Albox']],
-'Cádiz':[
-['San Fernando','San Fernando'],['Algeciras','Algeciras'],['Chipiona','Chipiona'],['Jerez de la Frontera','Jerez de la Frontera'],['Tres Caminos - Puerto Real','Puerto Real'],['Cádiz','Cádiz'],['Villamartín','Villamartín']],
-'Córdoba':[
-['Córdoba - Ingeniero Torres Quevedo','Córdoba'],['Córdoba - Las Quemadas','Córdoba'],['Pozoblanco','Pozoblanco'],['Peñarroya-Pueblonuevo','Peñarroya-Pueblonuevo'],['Baena','Baena'],['Puente Genil','Puente Genil'],['Palma del Río','Palma del Río'],['Lucena','Lucena'],['Priego de Córdoba','Priego de Córdoba']],
-'Granada':[
-['Granada','Granada'],['Peligros','Peligros'],['Baza','Baza'],['Motril','Motril'],['Las Gabias','Las Gabias'],['Loja','Loja'],['Órgiva','Órgiva'],['Huéscar','Huéscar'],['Guadix','Guadix']],
-'Huelva':[
-['Huelva','Huelva'],['Zalamea la Real','Zalamea la Real'],['San Juan del Puerto','San Juan del Puerto'],['Tharsis','Tharsis'],['Palma del Condado','La Palma del Condado']],
-'Jaén':[
-['Jaén','Jaén'],['Andújar','Andújar'],['Guarromán','Guarromán'],['Beas de Segura','Beas de Segura'],['Quesada','Quesada'],['Martos','Martos'],['Úbeda','Úbeda'],['Alcalá la Real','Alcalá la Real']],
-'Málaga':[
-['El Palo','Málaga'],['Guadalhorce','Málaga'],['Antequera','Antequera'],['San Pedro de Alcántara-Marbella','Marbella'],['Ronda','Ronda'],['Algarrobo','Algarrobo']],
-'Sevilla':[
-['Cazalla de la Sierra','Cazalla de la Sierra'],['La Rinconada','La Rinconada'],['Gelves','Gelves'],['Lebrija','Lebrija'],['Morón de la Frontera','Morón de la Frontera'],['Sanlúcar la Mayor','Sanlúcar la Mayor'],['Écija','Écija'],['Alcalá de Guadaíra','Alcalá de Guadaíra'],['Carmona','Carmona']]
+  "Almería": [
+    [
+      "Huércal de Almería (Zamarula)",
+      "Huércal de Almería"
+    ],
+    [
+      "Huércal de Almería (La Cepa)",
+      "Huércal de Almería"
+    ],
+    [
+      "Balanegra",
+      "Balanegra"
+    ],
+    [
+      "Vera",
+      "Vera"
+    ],
+    [
+      "Níjar",
+      "Níjar"
+    ],
+    [
+      "Albox",
+      "Albox"
+    ],
+    [
+      "Vélez-Rubio",
+      "Vélez-Rubio"
+    ]
+  ],
+  "Cádiz": [
+    [
+      "Cádiz",
+      "Cádiz"
+    ],
+    [
+      "San Fernando",
+      "San Fernando"
+    ],
+    [
+      "Algeciras",
+      "Algeciras"
+    ],
+    [
+      "Chipiona",
+      "Chipiona"
+    ],
+    [
+      "Jerez de la Frontera",
+      "Jerez de la Frontera"
+    ],
+    [
+      "Tres Caminos - Puerto Real",
+      "Puerto Real"
+    ],
+    [
+      "Villamartín",
+      "Villamartín"
+    ]
+  ],
+  "Córdoba": [
+    [
+      "Córdoba - Ingeniero Torres Quevedo",
+      "Córdoba"
+    ],
+    [
+      "Córdoba - Las Quemadas",
+      "Córdoba"
+    ],
+    [
+      "Pozoblanco",
+      "Pozoblanco"
+    ],
+    [
+      "Peñarroya-Pueblonuevo",
+      "Peñarroya-Pueblonuevo"
+    ],
+    [
+      "Baena",
+      "Baena"
+    ],
+    [
+      "Puente Genil",
+      "Puente Genil"
+    ],
+    [
+      "Palma del Río",
+      "Palma del Río"
+    ],
+    [
+      "Lucena",
+      "Lucena"
+    ],
+    [
+      "Priego de Córdoba",
+      "Priego de Córdoba"
+    ]
+  ],
+  "Granada": [
+    [
+      "Granada",
+      "Granada"
+    ],
+    [
+      "Peligros",
+      "Peligros"
+    ],
+    [
+      "Baza",
+      "Baza"
+    ],
+    [
+      "Motril",
+      "Motril"
+    ],
+    [
+      "Las Gabias",
+      "Las Gabias"
+    ],
+    [
+      "Loja",
+      "Loja"
+    ],
+    [
+      "Órgiva",
+      "Órgiva"
+    ],
+    [
+      "Huéscar",
+      "Huéscar"
+    ],
+    [
+      "Guadix",
+      "Guadix"
+    ]
+  ],
+  "Huelva": [
+    [
+      "Huelva",
+      "Huelva"
+    ],
+    [
+      "Zalamea la Real",
+      "Zalamea la Real"
+    ],
+    [
+      "San Juan del Puerto",
+      "San Juan del Puerto"
+    ],
+    [
+      "Tharsis",
+      "Tharsis"
+    ],
+    [
+      "La Palma del Condado",
+      "La Palma del Condado"
+    ],
+    [
+      "Galaroza",
+      "Galaroza"
+    ],
+    [
+      "Lepe",
+      "Lepe"
+    ]
+  ],
+  "Jaén": [
+    [
+      "Jaén",
+      "Jaén"
+    ],
+    [
+      "Andújar",
+      "Andújar"
+    ],
+    [
+      "Guarromán",
+      "Guarromán"
+    ],
+    [
+      "Beas de Segura",
+      "Beas de Segura"
+    ],
+    [
+      "Quesada",
+      "Quesada"
+    ],
+    [
+      "Martos",
+      "Martos"
+    ],
+    [
+      "Úbeda",
+      "Úbeda"
+    ],
+    [
+      "Alcalá la Real",
+      "Alcalá la Real"
+    ]
+  ],
+  "Málaga": [
+    [
+      "El Palo",
+      "Málaga"
+    ],
+    [
+      "Guadalhorce",
+      "Málaga"
+    ],
+    [
+      "El Viso",
+      "Málaga"
+    ],
+    [
+      "Antequera",
+      "Antequera"
+    ],
+    [
+      "Mijas",
+      "Mijas"
+    ],
+    [
+      "San Pedro de Alcántara-Marbella",
+      "Marbella"
+    ],
+    [
+      "Ronda",
+      "Ronda"
+    ],
+    [
+      "Algarrobo",
+      "Algarrobo"
+    ]
+  ],
+  "Sevilla": [
+    [
+      "Sevilla (El Pino)",
+      "Sevilla"
+    ],
+    [
+      "Cazalla de la Sierra",
+      "Cazalla de la Sierra"
+    ],
+    [
+      "La Rinconada",
+      "La Rinconada"
+    ],
+    [
+      "Gelves",
+      "Gelves"
+    ],
+    [
+      "Lebrija",
+      "Lebrija"
+    ],
+    [
+      "Morón de la Frontera",
+      "Morón de la Frontera"
+    ],
+    [
+      "Sanlúcar la Mayor",
+      "Sanlúcar la Mayor"
+    ],
+    [
+      "Écija",
+      "Écija"
+    ],
+    [
+      "Alcalá de Guadaíra",
+      "Alcalá de Guadaíra"
+    ],
+    [
+      "Carmona",
+      "Carmona"
+    ],
+    [
+      "Osuna",
+      "Osuna"
+    ],
+    [
+      "Utrera",
+      "Utrera"
+    ]
+  ]
 };
 let currentStations=[];
 function updateCount(){const n=selectedStations.length;$('selectedCount').textContent=n+' '+(n===1?'estación seleccionada':'estaciones seleccionadas');$('toMonitor').disabled=n===0}

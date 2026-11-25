@@ -1,83 +1,361 @@
 {
   "source": "https://www.veiasa.es/web/guest/itv/estaciones-itv/estaciones-fijas",
   "checked": "2026-11-25",
-  "note": "Listado inicial de estaciones fijas identificadas en el directorio público de VEIASA. No incluye laboratorios. Revisar el directorio oficial antes de viajar; el listado puede requerir ampliación o actualización.",
+  "catalogueVersion": "0.5",
+  "totalStations": 67,
+  "scope": "Estaciones ITV fijas incluidas en el directorio oficial de VEIASA. Excluye laboratorios, unidades móviles, unidades móviles agrícolas y otros servicios no fijos.",
+  "note": "Listado reconstruido a partir de las fichas visibles del directorio oficial de estaciones fijas de VEIASA. Antes de considerarlo exhaustivo, debe contrastarse con el total y paginación íntegra del directorio oficial; no se incluyen instalaciones que no se hayan podido identificar como estación fija.",
   "provinces": {
     "Almería": [
-      {"name":"Huércal de Almería (Zamarula)","town":"Huércal de Almería"},
-      {"name":"Huércal de Almería (La Cepa)","town":"Huércal de Almería"},
-      {"name":"Las Tres Villas","town":"Doña María"},
-      {"name":"Balanegra","town":"Balanegra"},
-      {"name":"Vera","town":"Vera"},
-      {"name":"Níjar","town":"Níjar"},
-      {"name":"Albox","town":"Albox"}
+      {
+        "name": "Huércal de Almería (Zamarula)",
+        "town": "Huércal de Almería",
+        "type": "fixed"
+      },
+      {
+        "name": "Huércal de Almería (La Cepa)",
+        "town": "Huércal de Almería",
+        "type": "fixed"
+      },
+      {
+        "name": "Balanegra",
+        "town": "Balanegra",
+        "type": "fixed"
+      },
+      {
+        "name": "Vera",
+        "town": "Vera",
+        "type": "fixed"
+      },
+      {
+        "name": "Níjar",
+        "town": "Níjar",
+        "type": "fixed"
+      },
+      {
+        "name": "Albox",
+        "town": "Albox",
+        "type": "fixed"
+      },
+      {
+        "name": "Vélez-Rubio",
+        "town": "Vélez-Rubio",
+        "type": "fixed"
+      }
     ],
     "Cádiz": [
-      {"name":"San Fernando","town":"San Fernando"},
-      {"name":"Algeciras","town":"Algeciras"},
-      {"name":"Chipiona","town":"Chipiona"},
-      {"name":"Jerez de la Frontera","town":"Jerez de la Frontera"},
-      {"name":"Tres Caminos - Puerto Real","town":"Puerto Real"},
-      {"name":"Cádiz","town":"Cádiz"},
-      {"name":"Villamartín","town":"Villamartín"}
+      {
+        "name": "Cádiz",
+        "town": "Cádiz",
+        "type": "fixed"
+      },
+      {
+        "name": "San Fernando",
+        "town": "San Fernando",
+        "type": "fixed"
+      },
+      {
+        "name": "Algeciras",
+        "town": "Algeciras",
+        "type": "fixed"
+      },
+      {
+        "name": "Chipiona",
+        "town": "Chipiona",
+        "type": "fixed"
+      },
+      {
+        "name": "Jerez de la Frontera",
+        "town": "Jerez de la Frontera",
+        "type": "fixed"
+      },
+      {
+        "name": "Tres Caminos - Puerto Real",
+        "town": "Puerto Real",
+        "type": "fixed"
+      },
+      {
+        "name": "Villamartín",
+        "town": "Villamartín",
+        "type": "fixed"
+      }
     ],
     "Córdoba": [
-      {"name":"Córdoba - Ingeniero Torres Quevedo","town":"Córdoba"},
-      {"name":"Córdoba - Las Quemadas","town":"Córdoba"},
-      {"name":"Pozoblanco","town":"Pozoblanco"},
-      {"name":"Peñarroya-Pueblonuevo","town":"Peñarroya-Pueblonuevo"},
-      {"name":"Baena","town":"Baena"},
-      {"name":"Puente Genil","town":"Puente Genil"},
-      {"name":"Palma del Río","town":"Palma del Río"},
-      {"name":"Lucena","town":"Lucena"},
-      {"name":"Priego de Córdoba","town":"Priego de Córdoba"}
+      {
+        "name": "Córdoba - Ingeniero Torres Quevedo",
+        "town": "Córdoba",
+        "type": "fixed"
+      },
+      {
+        "name": "Córdoba - Las Quemadas",
+        "town": "Córdoba",
+        "type": "fixed"
+      },
+      {
+        "name": "Pozoblanco",
+        "town": "Pozoblanco",
+        "type": "fixed"
+      },
+      {
+        "name": "Peñarroya-Pueblonuevo",
+        "town": "Peñarroya-Pueblonuevo",
+        "type": "fixed"
+      },
+      {
+        "name": "Baena",
+        "town": "Baena",
+        "type": "fixed"
+      },
+      {
+        "name": "Puente Genil",
+        "town": "Puente Genil",
+        "type": "fixed"
+      },
+      {
+        "name": "Palma del Río",
+        "town": "Palma del Río",
+        "type": "fixed"
+      },
+      {
+        "name": "Lucena",
+        "town": "Lucena",
+        "type": "fixed"
+      },
+      {
+        "name": "Priego de Córdoba",
+        "town": "Priego de Córdoba",
+        "type": "fixed"
+      }
     ],
     "Granada": [
-      {"name":"Granada","town":"Granada"},
-      {"name":"Peligros","town":"Peligros"},
-      {"name":"Baza","town":"Baza"},
-      {"name":"Motril","town":"Motril"},
-      {"name":"Las Gabias","town":"Las Gabias"},
-      {"name":"Loja","town":"Loja"},
-      {"name":"Órgiva","town":"Órgiva"},
-      {"name":"Huéscar","town":"Huéscar"},
-      {"name":"Guadix","town":"Guadix"}
+      {
+        "name": "Granada",
+        "town": "Granada",
+        "type": "fixed"
+      },
+      {
+        "name": "Peligros",
+        "town": "Peligros",
+        "type": "fixed"
+      },
+      {
+        "name": "Baza",
+        "town": "Baza",
+        "type": "fixed"
+      },
+      {
+        "name": "Motril",
+        "town": "Motril",
+        "type": "fixed"
+      },
+      {
+        "name": "Las Gabias",
+        "town": "Las Gabias",
+        "type": "fixed"
+      },
+      {
+        "name": "Loja",
+        "town": "Loja",
+        "type": "fixed"
+      },
+      {
+        "name": "Órgiva",
+        "town": "Órgiva",
+        "type": "fixed"
+      },
+      {
+        "name": "Huéscar",
+        "town": "Huéscar",
+        "type": "fixed"
+      },
+      {
+        "name": "Guadix",
+        "town": "Guadix",
+        "type": "fixed"
+      }
     ],
     "Huelva": [
-      {"name":"Huelva","town":"Huelva"},
-      {"name":"Zalamea la Real","town":"Zalamea la Real"},
-      {"name":"San Juan del Puerto","town":"San Juan del Puerto"},
-      {"name":"Tharsis","town":"Tharsis"},
-      {"name":"Palma del Condado","town":"La Palma del Condado"}
+      {
+        "name": "Huelva",
+        "town": "Huelva",
+        "type": "fixed"
+      },
+      {
+        "name": "Zalamea la Real",
+        "town": "Zalamea la Real",
+        "type": "fixed"
+      },
+      {
+        "name": "San Juan del Puerto",
+        "town": "San Juan del Puerto",
+        "type": "fixed"
+      },
+      {
+        "name": "Tharsis",
+        "town": "Tharsis",
+        "type": "fixed"
+      },
+      {
+        "name": "La Palma del Condado",
+        "town": "La Palma del Condado",
+        "type": "fixed"
+      },
+      {
+        "name": "Galaroza",
+        "town": "Galaroza",
+        "type": "fixed"
+      },
+      {
+        "name": "Lepe",
+        "town": "Lepe",
+        "type": "fixed"
+      }
     ],
     "Jaén": [
-      {"name":"Jaén","town":"Jaén"},
-      {"name":"Andújar","town":"Andújar"},
-      {"name":"Guarromán","town":"Guarromán"},
-      {"name":"Beas de Segura","town":"Beas de Segura"},
-      {"name":"Quesada","town":"Quesada"},
-      {"name":"Martos","town":"Martos"},
-      {"name":"Úbeda","town":"Úbeda"},
-      {"name":"Alcalá la Real","town":"Alcalá la Real"}
+      {
+        "name": "Jaén",
+        "town": "Jaén",
+        "type": "fixed"
+      },
+      {
+        "name": "Andújar",
+        "town": "Andújar",
+        "type": "fixed"
+      },
+      {
+        "name": "Guarromán",
+        "town": "Guarromán",
+        "type": "fixed"
+      },
+      {
+        "name": "Beas de Segura",
+        "town": "Beas de Segura",
+        "type": "fixed"
+      },
+      {
+        "name": "Quesada",
+        "town": "Quesada",
+        "type": "fixed"
+      },
+      {
+        "name": "Martos",
+        "town": "Martos",
+        "type": "fixed"
+      },
+      {
+        "name": "Úbeda",
+        "town": "Úbeda",
+        "type": "fixed"
+      },
+      {
+        "name": "Alcalá la Real",
+        "town": "Alcalá la Real",
+        "type": "fixed"
+      }
     ],
     "Málaga": [
-      {"name":"El Palo","town":"Málaga"},
-      {"name":"Guadalhorce","town":"Málaga"},
-      {"name":"Antequera","town":"Antequera"},
-      {"name":"San Pedro de Alcántara-Marbella","town":"Marbella"},
-      {"name":"Ronda","town":"Ronda"},
-      {"name":"Algarrobo","town":"Algarrobo"}
+      {
+        "name": "El Palo",
+        "town": "Málaga",
+        "type": "fixed"
+      },
+      {
+        "name": "Guadalhorce",
+        "town": "Málaga",
+        "type": "fixed"
+      },
+      {
+        "name": "El Viso",
+        "town": "Málaga",
+        "type": "fixed"
+      },
+      {
+        "name": "Antequera",
+        "town": "Antequera",
+        "type": "fixed"
+      },
+      {
+        "name": "Mijas",
+        "town": "Mijas",
+        "type": "fixed"
+      },
+      {
+        "name": "San Pedro de Alcántara-Marbella",
+        "town": "Marbella",
+        "type": "fixed"
+      },
+      {
+        "name": "Ronda",
+        "town": "Ronda",
+        "type": "fixed"
+      },
+      {
+        "name": "Algarrobo",
+        "town": "Algarrobo",
+        "type": "fixed"
+      }
     ],
     "Sevilla": [
-      {"name":"Cazalla de la Sierra","town":"Cazalla de la Sierra"},
-      {"name":"La Rinconada","town":"La Rinconada"},
-      {"name":"Gelves","town":"Gelves"},
-      {"name":"Lebrija","town":"Lebrija"},
-      {"name":"Morón de la Frontera","town":"Morón de la Frontera"},
-      {"name":"Sanlúcar la Mayor","town":"Sanlúcar la Mayor"},
-      {"name":"Écija","town":"Écija"},
-      {"name":"Alcalá de Guadaíra","town":"Alcalá de Guadaíra"},
-      {"name":"Carmona","town":"Carmona"}
+      {
+        "name": "Sevilla (El Pino)",
+        "town": "Sevilla",
+        "type": "fixed"
+      },
+      {
+        "name": "Cazalla de la Sierra",
+        "town": "Cazalla de la Sierra",
+        "type": "fixed"
+      },
+      {
+        "name": "La Rinconada",
+        "town": "La Rinconada",
+        "type": "fixed"
+      },
+      {
+        "name": "Gelves",
+        "town": "Gelves",
+        "type": "fixed"
+      },
+      {
+        "name": "Lebrija",
+        "town": "Lebrija",
+        "type": "fixed"
+      },
+      {
+        "name": "Morón de la Frontera",
+        "town": "Morón de la Frontera",
+        "type": "fixed"
+      },
+      {
+        "name": "Sanlúcar la Mayor",
+        "town": "Sanlúcar la Mayor",
+        "type": "fixed"
+      },
+      {
+        "name": "Écija",
+        "town": "Écija",
+        "type": "fixed"
+      },
+      {
+        "name": "Alcalá de Guadaíra",
+        "town": "Alcalá de Guadaíra",
+        "type": "fixed"
+      },
+      {
+        "name": "Carmona",
+        "town": "Carmona",
+        "type": "fixed"
+      },
+      {
+        "name": "Osuna",
+        "town": "Osuna",
+        "type": "fixed"
+      },
+      {
+        "name": "Utrera",
+        "town": "Utrera",
+        "type": "fixed"
+      }
     ]
   }
 }
